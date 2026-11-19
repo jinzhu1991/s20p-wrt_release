@@ -49,6 +49,16 @@ cd s20p-wrt_release
 2. 点击 **Run workflow**，`Device Model` 选择 **`S20P-WIFI-YES`**。
 3. 编译完成后在 Artifacts 下载固件（保留 3 天）。
 
+## 编译与测试强制流程
+
+每次改动必须按顺序执行（详见 [BUILD_CHECKLIST.md](BUILD_CHECKLIST.md)）：
+
+1. `./build.sh S20P-WIFI-YES config_preview`
+2. `./build.sh S20P-WIFI-YES debug`（**强制**，未通过不得云编译）
+3. GitHub Actions 云编译
+4. 本地模拟器测试（**强制**，router-emulator + S20P 分区备份）
+5. 真机验证（Wi-Fi / HNAT / Full Cone 最终确认）
+
 ## 重要说明
 
 - **硬件 NAT（MTK HNAT/WARP）** 与 **Full Cone NAT** 可能冲突：若断网或 fullcone 不生效，请二选一。
