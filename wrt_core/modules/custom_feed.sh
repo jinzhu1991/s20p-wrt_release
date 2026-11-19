@@ -568,7 +568,9 @@ install_custom_feed() {
         msd_lite luci-app-msd_lite cups luci-app-cupsd \
         tailscale luci-app-tailscale ddnsto luci-app-ddnsto nps luci-app-nps \
         frp luci-app-frpc luci-app-frps \
-        luci-app-syncdial luci-app-taskplan
+        luci-app-syncdial luci-app-taskplan luci-app-fullconenat \
+        vlmcsd luci-app-vlmcsd \
+        luci-app-autoreboot
     )
     local required_feed_dirs=(
         cups tcping v2ray-geodata taskd luci-lib-xterm luci-lib-taskd luci-app-store
