@@ -2,6 +2,8 @@
 
 set -e
 
+git config --global --add safe.directory '*' 2>/dev/null || true
+
 Dev=$1
 Build_Mod=$2
 
