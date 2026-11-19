@@ -195,7 +195,7 @@ jobs:
         run: |
           available_gb=$(df --output=avail -BG . | tail -n 1 | tr -dc '0-9')
           required_gb=20
-          if [[ "${{ inputs.model }}" == "MEDIATEK-WIFI-YES" ]]; then
+          if [[ "${{ inputs.model }}" == "MEDIATEK-WIFI-YES" || "${{ inputs.model }}" == "S20P-WIFI-YES" ]]; then
             required_gb=35
           fi
           if (( available_gb < required_gb )); then
@@ -330,7 +330,7 @@ jobs:
           body_path: ./release_body.txt
 
       - name: Prune Old Monitored Releases
-        if: ${{ contains(fromJSON('["MEDIATEK-WIFI-YES","MEDIATEK-WIFI-NO","S20L-WIFI-YES","S20P-WIFI-YES","S20-WIFI-NO","jdcloud_ax6000_immwrt","jdcloud_ax6000_immwrt_honk"]'), inputs.model) }}
+        if: ${{ contains(fromJSON('["S20P-WIFI-YES"]')), inputs.model) }}
         env:
           MODEL: ${{ inputs.model }}
         run: |

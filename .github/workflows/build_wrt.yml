@@ -139,7 +139,7 @@ jobs:
         run: |
           available_gb=$(df --output=avail -BG . | tail -n 1 | tr -dc '0-9')
           required_gb=20
-          if [[ "${{ inputs.model }}" == "MEDIATEK-WIFI-YES" ]]; then
+          if [[ "${{ inputs.model }}" == "MEDIATEK-WIFI-YES" || "${{ inputs.model }}" == "S20P-WIFI-YES" ]]; then
             required_gb=35
           fi
           if (( available_gb < required_gb )); then
