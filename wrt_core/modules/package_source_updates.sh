@@ -111,6 +111,10 @@ update_mwan3_fw4() {
         exit 1
     fi
 
+    # 上游 mwan3 Makefile 的 PKG_BUILD_DEPENDS 写成了 libnetfilter_conntrack（下划线），
+    # 实际包名是 libnetfilter-conntrack（连字符），修正以消除 defconfig 警告并保证可构建。
+    sed -i 's/PKG_BUILD_DEPENDS:=libnetfilter_conntrack libmnl/PKG_BUILD_DEPENDS:=libnetfilter-conntrack libmnl/' "$mwan3_dir/Makefile"
+
     echo "正在更新 luci-app-mwan3 fw4 适配版本..."
     if ! git_retry clone --depth 1 -b "$mwan3_branch" "$luci_app_mwan3_repo" "$luci_app_mwan3_dir"; then
         echo "错误：从 $luci_app_mwan3_repo 克隆 luci-app-mwan3 仓库失败" >&2
