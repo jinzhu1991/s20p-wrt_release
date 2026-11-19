@@ -614,8 +614,7 @@ install_custom_feed() {
         "sbwml/luci-app-mosdns|https://github.com/sbwml/luci-app-mosdns.git|v5|mosdns luci-app-mosdns geo2txt"
         "Openwrt-Passwall/openwrt-passwall|https://github.com/Openwrt-Passwall/openwrt-passwall.git|main|luci-app-passwall"
         "nikkinikki-org/OpenWrt-nikki|https://github.com/nikkinikki-org/OpenWrt-nikki.git|main|nikki luci-app-nikki mihomo-meta"
-        "dqsq2e2/luci-app-zTC1Control|https://github.com/dqsq2e2/luci-app-zTC1Control.git|main|luci-app-ztc1control" \
-        "kenzok8/jell|https://github.com/kenzok8/jell.git|main|openwrt-caddy"
+        "dqsq2e2/luci-app-zTC1Control|https://github.com/dqsq2e2/luci-app-zTC1Control.git|main|luci-app-ztc1control"
     )
 
     if [[ ${DAED_PACKAGES_ENABLED:-0} == "1" ]]; then
