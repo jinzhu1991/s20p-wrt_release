@@ -566,8 +566,7 @@ install_custom_feed() {
         lucky luci-app-lucky luci-app-openclash luci-app-homeproxy luci-app-amlogic \
         oaf open-app-filter luci-app-oaf easytier luci-app-easytier \
         msd_lite luci-app-msd_lite cups luci-app-cupsd \
-        tailscale luci-app-tailscale ddnsto luci-app-ddnsto nps luci-app-nps \
-        frp luci-app-frpc luci-app-frps \
+        tailscale luci-app-tailscale ddnsto luci-app-ddnsto nps frp \
         luci-app-syncdial luci-app-taskplan luci-app-fullconenat \
         vlmcsd luci-app-vlmcsd \
         luci-app-autoreboot
