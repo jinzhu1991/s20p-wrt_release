@@ -196,5 +196,5 @@ jobs:
           if [ -f ./action_build/Makefile ]; then
             make -C ./action_build clean || true
           fi
-          rm -rf ./action_build/build_dir ./action_build/staging_dir/target-* ./action_build/bin ./firmware
+          sudo rm -rf ./action_build/build_dir ./action_build/staging_dir/target-* ./action_build/bin ./firmware || true
           df -hT
