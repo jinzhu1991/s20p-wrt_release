@@ -565,7 +565,9 @@ install_custom_feed() {
         luci-app-quickstart luci-app-istorex luci-app-cloudflarespeedtest netdata luci-app-netdata \
         lucky luci-app-lucky luci-app-openclash luci-app-homeproxy luci-app-amlogic \
         oaf open-app-filter luci-app-oaf easytier luci-app-easytier \
-        msd_lite luci-app-msd_lite cups luci-app-cupsd
+        msd_lite luci-app-msd_lite cups luci-app-cupsd \
+        tailscale luci-app-tailscale ddnsto luci-app-ddnsto nps luci-app-nps \
+        frp luci-app-frpc luci-app-frps
     )
     local required_feed_dirs=(
         cups tcping v2ray-geodata taskd luci-lib-xterm luci-lib-taskd luci-app-store
@@ -611,7 +613,8 @@ install_custom_feed() {
         "sbwml/luci-app-mosdns|https://github.com/sbwml/luci-app-mosdns.git|v5|mosdns luci-app-mosdns geo2txt"
         "Openwrt-Passwall/openwrt-passwall|https://github.com/Openwrt-Passwall/openwrt-passwall.git|main|luci-app-passwall"
         "nikkinikki-org/OpenWrt-nikki|https://github.com/nikkinikki-org/OpenWrt-nikki.git|main|nikki luci-app-nikki mihomo-meta"
-        "dqsq2e2/luci-app-zTC1Control|https://github.com/dqsq2e2/luci-app-zTC1Control.git|main|luci-app-ztc1control"
+        "dqsq2e2/luci-app-zTC1Control|https://github.com/dqsq2e2/luci-app-zTC1Control.git|main|luci-app-ztc1control" \
+        "kenzok8/jell|https://github.com/kenzok8/jell.git|main|openwrt-caddy"
     )
 
     if [[ ${DAED_PACKAGES_ENABLED:-0} == "1" ]]; then
