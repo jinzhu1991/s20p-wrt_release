@@ -59,9 +59,16 @@ jobs:
 
       - name: Build System Setup
         run: |
-          sudo timeout 900 bash -c 'bash <(curl -sL https://build-scripts.immortalwrt.org/init_build_environment.sh)' || true
           sudo -E apt-get update -qq
-          sudo -E apt-get install -y --no-install-recommends dos2unix libfuse-dev gawk libncurses-dev
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+            build-essential gawk git libncurses-dev zlib1g-dev libssl-dev \
+            python3 python3-setuptools python3-pip \
+            unzip file wget rsync subversion mercurial breezy autoconf automake libtool \
+            pkg-config libelf-dev libfuse-dev dos2unix jq dwarves flex bison gperf \
+            libtool-bin gettext texinfo libltdl-dev libjson-c-dev libnl-3-dev \
+            libnl-genl-3-dev libpcap-dev libreadline-dev libusb-1.0-0-dev \
+            libblkid-dev uuid-dev libmount-dev libpcre2-dev \
+            libglib2.0-dev libpixman-1-dev meson ninja-build bc patch diffstat ccache
           sudo -E apt-get clean
 
       - name: Checkout
